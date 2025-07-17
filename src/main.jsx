@@ -7,3 +7,5 @@ createRoot(document.getElementById('root')).render(
     <App />
   </StrictMode>,
 )
+git pull origin <branch-name>
+git merge origin/animevite
