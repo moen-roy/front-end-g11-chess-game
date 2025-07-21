@@ -1,11 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import BoardComponent from './Components/BoardComponents';
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
-git pull origin <branch-name>
-git merge origin/animevite
+    
+    <BoardComponent></BoardComponent>
+
+  </StrictMode>
+);
