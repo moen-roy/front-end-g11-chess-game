@@ -1,12 +1,16 @@
+import React from 'react'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+
+import BoardComponent from './components/BoardComponents'
 
 import PawnComponent from './components/Pawn'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <PawnComponent />
-        <App />
+    <PawnComponent/>
+        <BoardComponent></BoardComponent>
+      
   </StrictMode>,
 )
 // git pull origin <branch-name>
