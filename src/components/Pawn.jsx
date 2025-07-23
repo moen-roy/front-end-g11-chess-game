@@ -1,9 +1,10 @@
-function PawnComponent(){
+import React from "react"
+function PawnComponent() {
 
-    return(
+    return (
         <div>
             <div>
-                <img src="./src/assets/images/Pawn.png"/>
+                <img src="./src/assets/images/Pawn.png" />
             </div>
         </div>
     )

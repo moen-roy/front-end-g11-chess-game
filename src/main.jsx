@@ -1,18 +1,15 @@
 import React from 'react';
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot } from 'react-dom/client';
+import QueenComponent from './components/QueenComponent';
 
-import BoardComponent from './components/BoardComponents'
-import PawnComponent from './components/Pawn'
 
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <PawnComponent />
-    <BoardComponent></BoardComponent>
-    
-  </StrictMode>,
+    <QueenComponent/>
+</StrictMode>
 )
 // git pull origin <branch-name>
 // git merge origin/animevite
