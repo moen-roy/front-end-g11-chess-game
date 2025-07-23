@@ -28,6 +28,39 @@ const handleClick = (row, col) => {
     if (index !== -1) {
       setSelected({ row, col, index });
     }
+    // Inside handleClick after "if (!selected)" block
+
+const direction = turn === "white" ? -1 : 1;
+const startRow = turn === "white" ? 6 : 1;
+
+const rowDiff = row - selected.row;
+const colDiff = col - selected.col;
+
+const isForward = colDiff === 0;
+const isOneStep = rowDiff === direction;
+const isTwoStep = selected.row === startRow && rowDiff === 2 * direction;
+
+// Forward movement only
+if (isForward && (isOneStep || isTwoStep)) {
+  const update = { row, col };
+
+  if (turn === "white") {
+    const newPawns = [...whitePawns];
+    newPawns[selected.index] = update;
+    setWhitePawns(newPawns);
+  } else {
+    const newPawns = [...blackPawns];
+    newPawns[selected.index] = update;
+    setBlackPawns(newPawns);
+  }
+
+  setTurn(turn === "white" ? "black" : "white");
+} else {
+  alert("Illegal pawn move!");
+}
+
+setSelected(null);
+
     return;
   }
 
