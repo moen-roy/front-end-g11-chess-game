@@ -28,7 +28,7 @@ const handleClick = (row, col) => {
     if (index !== -1) {
       setSelected({ row, col, index });
     }
-    // Inside handleClick after "if (!selected)" block
+    //"if (!selected)" block
 
 const direction = turn === "white" ? -1 : 1;
 const startRow = turn === "white" ? 6 : 1;
@@ -43,7 +43,14 @@ const isTwoStep = selected.row === startRow && rowDiff === 2 * direction;
 // Forward movement only
 if (isForward && (isOneStep || isTwoStep)) {
   const update = { row, col };
+  // handleClick after forward logic
+const opponentPawns = turn === "white" ? blackPawns : whitePawns;
+const targetOccupiedByOpponent = opponentPawns.some(p => p.row === row && p.col === col);
+const isDiagonalCapture = Math.abs(colDiff) === 1 && rowDiff === direction && targetOccupiedByOpponent;
 
+if (isDiagonalCapture) {
+  const update = { row, col };
+}
   if (turn === "white") {
     const newPawns = [...whitePawns];
     newPawns[selected.index] = update;
