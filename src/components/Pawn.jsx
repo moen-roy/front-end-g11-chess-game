@@ -1,93 +1,114 @@
 import React, { useState } from "react";
 import BoardComponent from "../components/BoardComponents";
-import pawn from "../assets/images/Pawn.png";   // White pawn
-import pawn2 from "../assets/images/Pawn2.png"; // Black pawn
+import pawn from "../assets/images/Pawn.png";   // White pawn image
+import pawn2 from "../assets/images/Pawn2.png"; // Black pawn image
 import "./BoardComponents.css";
 
 const PawnComponent = () => {
-  // Create 8 white pawns on row 6 (second last row)
+  // Initialize white pawns on row 6 (2nd to last row)
   const [whitePawns, setWhitePawns] = useState(
     Array.from({ length: 8 }, (_, col) => ({ row: 6, col }))
   );
-  // Create 8 black pawns on row 1 (second row)
+
+  // Initialize black pawns on row 1 (2nd row)
   const [blackPawns, setBlackPawns] = useState(
     Array.from({ length: 8 }, (_, col) => ({ row: 1, col }))
   );
-    
-const [selected, setSelected] = useState(null); // Holds selected pawn
-const [turn, setTurn] = useState("white"); // Track player turn
 
-  // Placeholder for click handling logic (to be added later)
-const handleClick = (row, col) => {
-  // If no pawn is selected yet
-  if (!selected) {
-    const pawns = turn === "white" ? whitePawns : blackPawns;
-    const index = pawns.findIndex(p => p.row === row && p.col === col);
+  // Holds the currently selected pawn (if any)
+  const [selected, setSelected] = useState(null);
 
-    // If clicked on a pawn belonging to current player, select it
-    if (index !== -1) {
-      setSelected({ row, col, index });
+  // Track whose turn it is
+  const [turn, setTurn] = useState("white");
+
+  // Handle clicks on the board
+  const handleClick = (row, col) => {
+    if (!selected) {
+      // No pawn selected: check if user clicked on their own pawn
+      const pawns = turn === "white" ? whitePawns : blackPawns;
+      const index = pawns.findIndex(p => p.row === row && p.col === col);
+      if (index !== -1) {
+        setSelected({ row, col, index }); // Select the pawn
+      }
+      return;
     }
-    //"if (!selected)" block
 
-const direction = turn === "white" ? -1 : 1;
-const startRow = turn === "white" ? 6 : 1;
+    // A pawn is already selected: evaluate move
+    const direction = turn === "white" ? -1 : 1;      // White moves up, black moves down
+    const startRow = turn === "white" ? 6 : 1;        // Starting row for each color
+    const rowDiff = row - selected.row;
+    const colDiff = col - selected.col;
 
-const rowDiff = row - selected.row;
-const colDiff = col - selected.col;
+    const isForward = colDiff === 0;
+    const isOneStep = rowDiff === direction;
+    const isTwoStep = selected.row === startRow && rowDiff === 2 * direction;
 
-const isForward = colDiff === 0;
-const isOneStep = rowDiff === direction;
-const isTwoStep = selected.row === startRow && rowDiff === 2 * direction;
+    // Check for diagonal capture
+    const opponentPawns = turn === "white" ? blackPawns : whitePawns;
+    const targetOccupiedByOpponent = opponentPawns.some(
+      p => p.row === row && p.col === col
+    );
+    const isDiagonalCapture =
+      Math.abs(colDiff) === 1 && rowDiff === direction && targetOccupiedByOpponent;
 
-// Forward movement only
-if (isForward && (isOneStep || isTwoStep)) {
-  const update = { row, col };
-  // handleClick after forward logic
-const opponentPawns = turn === "white" ? blackPawns : whitePawns;
-const targetOccupiedByOpponent = opponentPawns.some(p => p.row === row && p.col === col);
-const isDiagonalCapture = Math.abs(colDiff) === 1 && rowDiff === direction && targetOccupiedByOpponent;
+    if ((isForward && (isOneStep || isTwoStep)) || isDiagonalCapture) {
+      // Valid move: update board
+      const update = { row, col };
 
-if (isDiagonalCapture) {
-  const update = { row, col };
-}
-  if (turn === "white") {
-    const newPawns = [...whitePawns];
-    newPawns[selected.index] = update;
-    setWhitePawns(newPawns);
-  } else {
-    const newPawns = [...blackPawns];
-    newPawns[selected.index] = update;
-    setBlackPawns(newPawns);
-  }
+      if (turn === "white") {
+        const newPawns = [...whitePawns];
+        newPawns[selected.index] = update;
+        setWhitePawns(newPawns);
 
-  setTurn(turn === "white" ? "black" : "white");
-} else {
-  alert("Illegal pawn move!");
-}
+        // If capturing, remove black pawn
+        if (isDiagonalCapture) {
+          setBlackPawns(prev =>
+            prev.filter(p => !(p.row === row && p.col === col))
+          );
+        }
+      } else {
+        const newPawns = [...blackPawns];
+        newPawns[selected.index] = update;
+        setBlackPawns(newPawns);
 
-setSelected(null);
+        // If capturing, remove white pawn
+        if (isDiagonalCapture) {
+          setWhitePawns(prev =>
+            prev.filter(p => !(p.row === row && p.col === col))
+          );
+        }
+      }
 
-    return;
-  }
+      // Switch turns after valid move
+      setTurn(turn === "white" ? "black" : "white");
+    } else {
+      // Invalid move: notify user
+      alert("Illegal pawn move!");
+    }
 
-  // Move logic to be added later...
-  setSelected(null); // Deselect
-};
+    // Clear selection regardless of outcome
+    setSelected(null);
+  };
 
-  // Render each tile with a pawn image if present
+  // Render each board tile
   const renderTile = (row, col) => {
     const white = whitePawns.find(p => p.row === row && p.col === col);
     const black = blackPawns.find(p => p.row === row && p.col === col);
+    const isSelected =
+      selected?.row === row && selected?.col === col;
 
     return (
-      <div className="pawn" onClick={() => handleClick(row, col)}>
+      <div
+        className={`pawn ${isSelected ? "selected" : ""}`}
+        onClick={() => handleClick(row, col)}
+      >
         {white && <img src={pawn} alt="white" />}
         {black && <img src={pawn2} alt="black" />}
       </div>
     );
   };
 
+  // Render the board with custom tiles
   return <BoardComponent renderTile={renderTile} />;
 };
 
