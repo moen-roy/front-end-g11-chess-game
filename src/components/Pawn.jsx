@@ -13,9 +13,27 @@ const PawnComponent = () => {
   const [blackPawns, setBlackPawns] = useState(
     Array.from({ length: 8 }, (_, col) => ({ row: 1, col }))
   );
+    
+const [selected, setSelected] = useState(null); // Holds selected pawn
+const [turn, setTurn] = useState("white"); // Track player turn
 
   // Placeholder for click handling logic (to be added later)
-  const handleClick = (row, col) => {};
+const handleClick = (row, col) => {
+  // If no pawn is selected yet
+  if (!selected) {
+    const pawns = turn === "white" ? whitePawns : blackPawns;
+    const index = pawns.findIndex(p => p.row === row && p.col === col);
+
+    // If clicked on a pawn belonging to current player, select it
+    if (index !== -1) {
+      setSelected({ row, col, index });
+    }
+    return;
+  }
+
+  // Move logic to be added later...
+  setSelected(null); // Deselect
+};
 
   // Render each tile with a pawn image if present
   const renderTile = (row, col) => {
