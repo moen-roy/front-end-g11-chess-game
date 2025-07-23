@@ -1,16 +1,7 @@
-<<<<<<< HEAD
-import React from 'react';
-=======
-import React from "react"
->>>>>>> d6c0f158bcf288130b1fc9562cd1a48efb5a6a23
-function PawnComponent(){
+import React, { useState } from "react";
+import BoardComponent from "../components/BoardComponents";
+import pawn from "../assets/images/Pawn.png";   // White pawn
+import pawn2 from "../assets/images/Pawn2.png"; // Black pawn
+import "./BoardComponents.css";
 
-    return(
-        <div>
-            <div>
-                <img src="./src/assets/images/Pawn.png"/>
-            </div>
-        </div>
-    )
-}
-export default PawnComponent
+const PawnComponent = () => {}
