@@ -1,22 +1,21 @@
-import React from 'react';
-import './BoardComponents.css'
+import React from "react";
+import "./BoardComponents.css";
 
-function BoardComponent () {
+const BoardComponent = ({ renderTile }) => {
   const rows = 8;
   const columns = 8;
 
   const createBoard = () => {
-    let board = [];
-
+    const board = [];
     for (let row = 0; row < rows; row++) {
-      let cells = [];
+      const cells = [];
       for (let col = 0; col < columns; col++) {
         const isEven = (row + col) % 2 === 0;
+        const tileColor = isEven ? "blue" : "gold";
         cells.push(
-          <div
-            key={`${row}-${col}`}
-            className={`tile ${isEven ? 'blue' : 'gold'}`}
-          />
+          <div key={`${row}-${col}`} className={`tile ${tileColor}`}>
+            {renderTile(row, col)}
+          </div>
         );
       }
       board.push(
@@ -25,11 +24,11 @@ function BoardComponent () {
         </div>
       );
     }
-
+    
     return board;
   };
 
   return <div className="board">{createBoard()}</div>;
-}
+};
 
 export default BoardComponent;

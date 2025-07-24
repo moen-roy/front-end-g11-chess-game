@@ -1,10 +1,10 @@
 .board {
   display: flex;
   flex-direction: column;
-  width: 480px;
-  height: 480px;
+  width: 640px;
+  height: 640px;
   margin: 40px auto;
-  border: 4px solid #000;
+  border: 4px solid black;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -15,6 +15,10 @@
 
 .tile {
   flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   aspect-ratio: 1;
 }
 
@@ -24,4 +28,35 @@
 
 .gold {
   background-color: #AB9417;
+}
+
+.tile-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chess-icon {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tile-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.tile-overlay.selected {
+  background-color: rgba(0, 255, 255, 0.3);
 }
