@@ -6,13 +6,21 @@ import Bishop from './components/Bishop'
 
 import BoardComponent from './components/BoardComponents'
 import All from './components/AllComponents'
+// import BoardComponent from './components/BoardComponents'
+import KingComponent from './components/KingComponent'
 import PawnComponent from './components/Pawn'
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <All />
 
       
+    <PawnComponent/>
+        
+        <KingComponent/>
+  
+
   </StrictMode>,
   )
 
