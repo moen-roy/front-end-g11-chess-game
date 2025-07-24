@@ -1,18 +1,18 @@
-import React from 'react'
+import React from 'react';
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot } from 'react-dom/client';
+import QueenComponent from './components/QueenComponent';
+
 
 import BoardComponent from './components/BoardComponents'
+
 import PawnComponent from './components/Pawn'
-import RookComponent from './components/Rook'
-createRoot(document.getElementById('root')).render
-  (
-    <StrictMode>
-      <PawnComponent/>
-      <RookComponent />     
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <PawnComponent/>
+        <BoardComponent></BoardComponent>
       
-    <PawnComponent />
-      <BishopComponent />
   </StrictMode>,
   )
 
