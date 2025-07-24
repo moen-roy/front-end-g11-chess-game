@@ -1,7 +1,8 @@
-import React from 'react';
-import './BoardComponents.css'
+// src/components/BoardComponent.js
+import React from "react";
+import "./BoardComponents.css";
 
-function BoardComponent () {
+function BoardComponent({ renderTile }) {
   const rows = 8;
   const columns = 8;
 
@@ -15,8 +16,10 @@ function BoardComponent () {
         cells.push(
           <div
             key={`${row}-${col}`}
-            className={`tile ${isEven ? 'blue' : 'gold'}`}
-          />
+            className={`tile ${isEven ? "blue" : "gold"}`}
+          >
+            {renderTile ? renderTile(row, col) : null}
+          </div>
         );
       }
       board.push(
