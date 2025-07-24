@@ -2,7 +2,7 @@ import React from "react"
 import { useState } from "react"
 import queen from "../assets/images/Queen.png"; // White queen image
 import queen2 from "../assets/images/Queen2.png"; // Black queen image
-// import BoardComponent from "./BoardComponents"; // Your board rendering component
+import BoardComponent from "./BoardComponents"; // Your board rendering component
 import "./BoardComponents.css"; // Styles for tiles, pieces, and highlights
 
 const QueenComponent = () => {

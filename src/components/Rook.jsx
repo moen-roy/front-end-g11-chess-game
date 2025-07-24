@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import rookWhite from "../assets/images/Rook.png";   // White Rook
 import rookBlack from "../assets/images/Rook2.png";  // Black Rook
 import BoardComponent from "./BoardComponents";
@@ -97,6 +99,8 @@ return (
   </div>
 );
   };
+  return <BoardComponent renderTile={renderTile} />;
+
 };
 
 export default RookComponent;
