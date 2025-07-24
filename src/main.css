@@ -1,25 +1,13 @@
-.board {
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  height: 400px;
-  border: 2px solid #000;
-}
-
-.row {
-  display: flex;
-  flex: 1;
-}
-
-.tile {
-  width: 50px;
+img{
   height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:row;
 }
-
-.blue {
-  background-color: #4682B4;
-}
-
-.gold {
-  background-color: #FFD700;
+#piece{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:row;
 }
