@@ -1,12 +1,40 @@
-# React + Vite
+# Chess Game 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simpler, interactive game built with react demonstrating core chess functionality interactive with the peices. It's perfect for learning about state management, component structuring, and game logic in React.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- A home page to have an understnding of the chess game.
+- Move chess pieces by clicking
+- Legal move validation for each piece
+- Reset button to restart the game
+- All major chess pieces: King, Queen, Bishop, Knight, Rook, Pawn
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies used
+-React
+-JavaScriipt
+-css
+
+## Project structure 
+
+-chess-game/
+├── public/
+│ └── index.html
+├── src/
+│ ├── assets/
+│ │ └── images/
+│ │ ├── Bishop1.png
+│ │ ├── Bishop2.png
+│ │ └── (other piece images)
+│ ├── components/
+│ │ ├── all components
+│ ├── main.jsx
+│ └── App.jsx
+├── .gitignore
+├── package.json
+├── README.md
+└── vite.config.js 
+
+## 👥 Contributors
