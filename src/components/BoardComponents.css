@@ -25,3 +25,21 @@
 .gold {
   background-color: #AB9417;
 }
+.selected {
+  border: 2px solid red;
+  box-sizing: border-box;
+}
+.pawn {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.tile > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
