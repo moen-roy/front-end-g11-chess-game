@@ -42,4 +42,18 @@
   align-items: center;
   justify-content: center;
 }
-
+.Bishop{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.piece-image {
+  width: 40px;
+  height: 80 px;
+  object-fit: contain;
+  cursor: pointer;
+}
+.selected {
+  width: 40px;
+  box-sizing: border-box;
+}
