@@ -6,7 +6,7 @@
   margin: 40px auto;
   border: 4px solid black;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  overflow: hidden
+  overflow: hidden;
 }
 
 .row {
@@ -26,93 +26,21 @@
 .blue {
   background-color: #1E3A8A;
 }
-.gold {
-  background-color: #AB9417;
-}
-
-.board {
-  display: flex;
-  flex-direction: column;
-  width: 480px;
-  height: 480px;
-  border: 2px solid black;
-}
-
-.chess-icon {
-  
-  height: 60px;
-  width: 60px;
-  object-fit: contain;
-  pointer-events: none;
-  display: flex;
-}
-
-
-
-.row {
-  display: flex;
-  flex: 1;
-}
-
-.tile>div {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.blue {
-  background-color: #1E3A8A;
-}
 
 .gold {
   background-color: #AB9417;
 }
+
 .selected {
   border: 2px solid red;
   box-sizing: border-box;
 }
-.pawn {
-  width: 60px;
-  height: 60px;
-  cursor: pointer;
-}
 
-.tile > div {
-  width: 100%;
-  height: 100%;
-}
-.tile-content {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.Bishop{
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-}
 .piece-image {
   width: 40px;
-  height: 80 px;
+  height: 80px;
   object-fit: contain;
   cursor: pointer;
-}
-.selected {
-  width: 40px;
-  box-sizing: border-box;
-}
-
-.chess-icon {
-  width: 80%;
-  height: 80%;
-  object-fit: contain;
-  pointer-events: none;
-  z-index: 1;
 }
 
 .tile-overlay {
@@ -128,3 +56,21 @@
 .tile-overlay.selected {
   background-color: rgba(0, 255, 255, 0.3);
 }
+.chess-icon{
+  display: flex;
+
+}
+.tile-wrapper {
+  width: 60%;  
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.tile-content {
+   width: 60%;  
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
