@@ -1,6 +1,8 @@
 // src/components/RookComponent.js
-import React, { useState } from "react";
-import BoardComponent from "./BoardComponents";
+import React from "react";
+import { useState } from "react";
+
+// import BoardComponent from "./BoardComponents";
 import rookWhite from "../assets/images/Rook.png";
 import rookBlack from "../assets/images/Rook2.png";
 import "./BoardComponents.css";

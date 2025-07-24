@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import  { useState } from "react";
+
 import bishopWhite from "../assets/images/Bishop1.png";
 import bishopBlack from "../assets/images/Bishop2.png";
 import "./BoardComponents.css";
-import BoardComponent from "../components/BoardComponents"; // getting the board component 
+// import BoardComponent from "../components/BoardComponents"; // getting the board component 
 
 // placing positions for 4 bishops in the board 
 const initialBishops = [

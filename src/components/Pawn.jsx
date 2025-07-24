@@ -1,5 +1,7 @@
-import React, { useState } from "react";
-import BoardComponent from "../components/BoardComponents";
+import React from "react";
+import { useState } from "react";
+
+// import BoardComponent from "../components/BoardComponents";
 import pawn from "../assets/images/Pawn.png";   // White pawn image
 import pawn2 from "../assets/images/Pawn2.png"; // Black pawn image
 import "./BoardComponents.css";
