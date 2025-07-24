@@ -1,3 +1,16 @@
+img{
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:row;
+}
+#piece{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:row;
+}
 board {
   display: flex;
   flex-direction: column;
