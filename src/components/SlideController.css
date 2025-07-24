@@ -1,0 +1,61 @@
+body {
+    background: url("https://w0.peakpx.com/wallpaper/279/691/HD-wallpaper-chess-board-with-chess-black-background-3d-chess-3d-chess-black-and-white-pieces-chessboard-3d-chess-pieces.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: wheat;
+    font-weight: bold;
+
+}
+
+.buttons {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.piece h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+
+}
+
+.instructions {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+
+}
+
+.icons {
+    height: 66px;
+    width: 66px;
+    display: flex;
+    align-items: center;
+    margin-left: 85px;
+    margin-top: -50px;
+    max-width: 50px;
+}
+
+span {
+    background-color: khaki;
+    border-radius: 10px;
+    padding: 4px;
+    color: red;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+button:hover {
+    background-color: #444;
+}
