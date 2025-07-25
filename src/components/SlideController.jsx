@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Homepage from "./Homepage";
 import ChessSlides from "./ChessSlides";
+import ChessGame from "./AllLogic";
 
 
 const SlideController = () => {
@@ -35,9 +36,9 @@ const SlideController = () => {
             <div>
                 <ChessSlides onNext={goToNext} onPrev={goToPrev} />
             </div>
-            {/* <div>
-                <BoardComponents onPrev={goToPrev} />
-            </div> */}
+            <div>
+                <ChessGame onNext={goToNext} />
+            </div>
         </Carousel>
     );
 };

@@ -27,7 +27,20 @@ body {
     font-family: Arial, sans-serif;
 
 }
-
+img{
+    height: 100%;
+    width: 100%;
+}
+h1{
+    color: cyan;
+;
+}
+h3{
+    color: greenyellow;
+}
+h4{
+    color: magenta;
+}
 .icons {
     height: 66px;
     width: 66px;
