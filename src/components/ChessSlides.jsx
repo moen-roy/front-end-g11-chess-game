@@ -4,7 +4,6 @@ import { useState } from "react";
 import './SlideController.css';
 
 
-
 const ChessSlides = ({ onPrev, onNext }) => {
     return (
         <div>
@@ -51,7 +50,7 @@ const ChessSlides = ({ onPrev, onNext }) => {
                                     The queen combines <b>the power of the rook and bishop.</b></p>
                             
                                     <h4>King</h4>
-                                    <img src="src/assets/images/king.png" className="icons" alt="king"></img>
+                                    <img src="src/assets/images/King.png" className="icons" alt="king"></img>
                                     <p>
                                         The most important piece on the board is<span>the king.</span> The king can move <span>one square</span> in any direction: forward, backward, sideways, or diagonally.
                                         The capture of the king is the object of the game.</p>

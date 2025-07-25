@@ -3,8 +3,8 @@ import React, { useState } from "react";
 const Homepage = ({ onNext }) => {
 
     return (
-        <div classname="home">
-            <div>
+        <div >
+            <div className="home">
                 <h1>WELCOME TO CHESS-QUEST G11</h1>
                 <p>
                     <span>Chess-quest</span> is a simple chess game app that allows two players to play manually.
