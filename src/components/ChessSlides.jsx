@@ -1,7 +1,6 @@
 import React from "react";
-import Homepage from './Homepage';
-import { useState } from "react";
 import './SlideController.css';
+
 
 
 const ChessSlides = ({ onPrev, onNext }) => {
@@ -23,7 +22,7 @@ const ChessSlides = ({ onPrev, onNext }) => {
                 </p>
 
                     <h4>Pawn</h4>
-                    <img src="src/assets/images/Pawn.png" className="icons" alt="pawn"></img>
+                    <img src="/src/assets/images/Pawn.png " className="icons" alt="pawn"></img>
                     <p>
                         White pawns start on <span>rank 2</span>, black pawns on <span>rank 7</span>. The first time a pawn moves, it may move forward either 1 or 2 squares.
                         After that, it can only move 1 square forward. <b>Pawns capture diagonally,</b> forward left or forward right one square.
