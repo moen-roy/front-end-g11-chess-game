@@ -19,22 +19,57 @@ This is a simpler, interactive game built with react demonstrating core chess fu
 
 ## Project structure 
 
--chess-game/
+-chess-game
+│
 ├── public/
-│ └── index.html
+│   └── index.html
+│
 ├── src/
-│ ├── assets/
-│ │ └── images/
-│ │ ├── Bishop1.png
-│ │ ├── Bishop2.png
-│ │ └── (other piece images)
-│ ├── components/
-│ │ ├── all components
-│ ├── main.jsx
-│ └── App.jsx
+│   ├── assets/
+│   │   └── images/
+│   │       ├── Bishop1.png
+│   │       ├── Bishop2.png
+│   │       ├── King.png
+│   │       ├── King2.png
+│   │       ├── Knight.png
+│   │       ├── Knight2.png
+│   │       ├── Pawn.png
+│   │       ├── Pawn2.png
+│   │       ├── Queen.png
+│   │       ├── Queen2.png
+│   │       ├── Rook.png
+│   │       └── Rook2.png
+│   │
+│   ├── components/
+│   │   ├── AllLogic.jsx             
+│   │   ├── Bishop.jsx                
+│   │   ├── KingComponent.jsx
+│   │   ├── KnightComponent.jsx      
+│   │   ├── Pawn.jsx                  
+│   │   ├── PiecesComponent.jsx       
+│   │   ├── QueenComponent.jsx
+│   │   ├── Rook.jsx                  
+│   │   ├── BoardComponents.jsx       
+│   │   ├── BoardComponents.css       
+│   │   ├── SlideController.jsx       
+│   │   └── SlideController.css       
+│   │
+│   ├── ChessGame.jsx                
+│   ├── ChessSlides.jsx              
+│   ├── GameBoard.jsx                
+│   ├── Homepage.jsx                 
+│   ├── App.jsx                      
+│   ├── main.jsx                     
+│
 ├── .gitignore
+├── index.html
 ├── package.json
+├── package-lock.json
 ├── README.md
-└── vite.config.js 
+
 
 ## 👥 Contributors
+-Roy Mwenda
+-AbdiHakim Ali 
+-Grace Kamau
+-Euphraith Maganjo
