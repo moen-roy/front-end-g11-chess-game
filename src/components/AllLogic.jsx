@@ -1,5 +1,5 @@
 // src/components/ChessGame.js
-import React, { useState } from "react";
+import { useState } from "react";
 import BoardComponent from "./BoardComponents";
 
 import pawnWhite from "../assets/images/Pawn.png";
@@ -130,7 +130,7 @@ function ChessGame() {
         return false;
     }
   };
-
+  // Renders a single tile, including the piece image if present
   const renderTile = (row, col) => {
     const key = `${row}-${col}`;
     const piece = boardState[key];
