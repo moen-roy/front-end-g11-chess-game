@@ -15,7 +15,7 @@ import queenBlack from "../assets/images/Queen2.png";
 
 // Step 1: Extract this into a function so we can call it for resetting
 const getInitialBoard = () => {
-  const initial = {};
+  const initial = {}; // initial board 
 
   for (let col = 0; col < 8; col++) {
     initial[`6-${col}`] = { type: "pawn", color: "white" };
@@ -42,25 +42,25 @@ const getInitialBoard = () => {
 };
 
 function ChessGame() {
-  const [boardState, setBoardState] = useState(getInitialBoard);
+  const [boardState, setBoardState] = useState(getInitialBoard); // keep track of where pieces are 
   const [selectedPiece, setSelectedPiece] = useState(null);
-  const [currentTurn, setCurrentTurn] = useState("white");
+  const [currentTurn, setCurrentTurn] = useState("white"); // stores whoese turn it is 
 
   const handleTileClick = (row, col) => {
     const key = `${row}-${col}`;
     const piece = boardState[key];
 
-    if (selectedPiece) {
-      const { row: fromRow, col: fromCol, piece: movingPiece } = selectedPiece;
+    if (selectedPiece) { // if a piece is selected 
+      const { row: fromRow, col: fromCol, piece: movingPiece } = selectedPiece; // get the piece current location and value 
       const fromKey = `${fromRow}-${fromCol}`;
 
       if (isValidMove(movingPiece, fromRow, fromCol, row, col)) {
-        const newBoard = { ...boardState };
-        delete newBoard[fromKey];
-        newBoard[key] = movingPiece;
-        setBoardState(newBoard);
+        const newBoard = { ...boardState }; // these copies the board 
+        delete newBoard[fromKey]; // deleting the piece from old position 
+        newBoard[key] = movingPiece; // add the piece in a new position 
+        setBoardState(newBoard); // update the board
         setSelectedPiece(null);
-        setCurrentTurn((prev) => (prev === "white" ? "black" : "white"));
+        setCurrentTurn((prev) => (prev === "white" ? "black" : "white")); // switch the turn 
       } else {
         setSelectedPiece(null);
       }
@@ -69,12 +69,12 @@ function ChessGame() {
     }
   };
 
-  const isValidMove = (piece, fromRow, fromCol, toRow, toCol) => {
-    if (fromRow === toRow && fromCol === toCol) return false;
+  const isValidMove = (piece, fromRow, fromCol, toRow, toCol) => { // if clicked check if from one square 
+    if (fromRow === toRow && fromCol === toCol) return false; // cant move the same square 
 
     const destKey = `${toRow}-${toCol}`;
     const targetPiece = boardState[destKey];
-    if (targetPiece && targetPiece.color === piece.color) return false;
+    if (targetPiece && targetPiece.color === piece.color) return false; // cant capture 
 
     const rowDiff = Math.abs(toRow - fromRow);
     const colDiff = Math.abs(toCol - fromCol);

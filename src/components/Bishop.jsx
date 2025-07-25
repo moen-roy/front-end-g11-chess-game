@@ -9,12 +9,12 @@ import "./BoardComponents.css";
 // placing positions for 4 bishops in the board 
 const initialBishops = [
   { id: 1, row: 7, col: 2, color: "white", image: bishopWhite }, // c1
-  { id: 2, row: 7, col: 5, color: "white", image: bishopWhite }, // f1
+  { id: 2, row: 7, col: 5, color: "white", image: bishopWhite }, // f1 // these are array 
   { id: 3, row: 0, col: 2, color: "black", image: bishopBlack }, // c8
   { id: 4, row: 0, col: 5, color: "black", image: bishopBlack }, // f8
 ];
 
-const BishopComponent = () => {
+const BishopComponent = () => { // rendering the bishop logic 
   const [bishops, setBishops] = useState(initialBishops);
   const [selected, setSelected] = useState(null);
 
@@ -34,7 +34,7 @@ const BishopComponent = () => {
     const colDiff = Math.abs(col - current.col);
 
     if (rowDiff === colDiff) { // bishop moves diagonally 
-      const updated = bishops.map((b) =>
+      const updated = bishops.map((b) => // created a new array of bishops and update postion 
         b.id === selected ? { ...b, row, col } : b // update the position of bishop
       );
       setBishops(updated);
@@ -45,7 +45,7 @@ const BishopComponent = () => {
     setSelected(null); // deselect after moving
   };
 
-  // ✅ Reset handler to where bishop was 
+  // Reset handler to where bishop was 
   const handleReset = () => {
     setBishops(initialBishops);
     setSelected(null);
@@ -53,7 +53,7 @@ const BishopComponent = () => {
 
   const renderTile = (row, col) => {
     const bishop = bishops.find((b) => b.row === row && b.col === col); // check if bishop is on the right place 
-    const isSelected = bishop?.id === selected; //check if this is the selected bishop in place
+    const isSelected = bishop?.id === selected; //check if bishop was selected 
 
     return (
       <div
